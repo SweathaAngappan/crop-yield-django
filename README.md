@@ -3,7 +3,7 @@
 A full-stack machine learning web app that predicts crop production across Indian states using a Random Forest Regressor trained on 6,900+ historical agricultural records.
 
 🔗 **Live demo:** https://crop-yield-django.onrender.com
-🔗 **Lightweight client-side version (no backend):** https://crop-yieldprediction.netlify.app
+🔗 **Lightweight client-side version (no backend):** https://sweathaangappan.github.io/CropYieldPrediction/
 📓 **Training notebook:** [Crop_Yield_Prediction_Clean.ipynb](./Crop_Yield_Prediction_Clean.ipynb)
 
 > Note: the live demo runs on a free Render instance and sleeps after ~15 minutes of inactivity — the first request after that may take 30–50 seconds to respond while it wakes up.
