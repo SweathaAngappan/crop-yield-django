@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Crop Yield Intelligence</title>
+<link rel="stylesheet" href="{% static 'predictor/style.css' %}">
+</head>
+<body>
+<div class="wrap">
+  <h1>Crop Yield <span style="color:#84ac52; font-style:italic;">Intelligence</span></h1>
+  <div class="tabs">
+    <a href="{% url 'predict' %}" class="tab {% if active_tab == 'predict' %}active{% endif %}">Predict</a>
+    <a href="{% url 'analytics' %}" class="tab {% if active_tab == 'analytics' %}active{% endif %}">Analytics</a>
+    <a href="{% url 'model' %}" class="tab {% if active_tab == 'model' %}active{% endif %}">Model</a>
+  </div>
+  {% block content %}{% endblock %}
+</div>
+</body>
+</html>

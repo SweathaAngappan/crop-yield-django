@@ -1,0 +1,19 @@
+{% extends 'predictor/base.html' %}
+{% block content %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<div class="stat-grid">
+  <div class="stat"><div class="label">R² (log space)</div><div class="value">{{ r2_log }}</div></div>
+  <div class="stat"><div class="label">MAE</div><div class="value">{{ mae }}</div></div>
+  <div class="stat"><div class="label">RMSE</div><div class="value">{{ rmse }}</div></div>
+  <div class="stat"><div class="label">Train / Test</div><div class="value">{{ n_train }}/{{ n_test }}</div></div>
+</div>
+<div class="card"><canvas id="chartScatter"></canvas></div>
+<script>
+const scatterData = {{ scatter_json|safe }};
+new Chart(document.getElementById('chartScatter'), {
+  type: 'scatter',
+  data: { datasets: [{ label: 'Predicted vs Actual', data: scatterData, backgroundColor: 'rgba(221,162,63,0.6)' }] },
+  options: { scales: { x: { title: { display: true, text: 'log(actual)' } }, y: { title: { display: true, text: 'log(predicted)' } } } }
+});
+</script>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'predictor/base.html' %}
+{% block content %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<div class="card"><canvas id="chartYearly"></canvas></div>
+<div class="card"><canvas id="chartSeason"></canvas></div>
+<div class="card"><canvas id="chartCrops"></canvas></div>
+<div class="card"><canvas id="chartStates"></canvas></div>
+
+<script>
+new Chart(document.getElementById('chartYearly'), {
+  type: 'line',
+  data: { labels: {{ yearly_labels|safe }}, datasets: [{ label: 'Total production', data: {{ yearly_values|safe }}, borderColor: '#dda23f', fill: false }] }
+});
+new Chart(document.getElementById('chartSeason'), {
+  type: 'bar',
+  data: { labels: {{ season_labels|safe }}, datasets: [{ label: 'Records', data: {{ season_values|safe }}, backgroundColor: '#84ac52' }] }
+});
+new Chart(document.getElementById('chartCrops'), {
+  type: 'bar',
+  data: { labels: {{ crop_labels|safe }}, datasets: [{ label: 'Production', data: {{ crop_values|safe }}, backgroundColor: '#a9743f' }] },
+  options: { indexAxis: 'y' }
+});
+new Chart(document.getElementById('chartStates'), {
+  type: 'bar',
+  data: { labels: {{ state_labels|safe }}, datasets: [{ label: 'Production', data: {{ state_values|safe }}, backgroundColor: '#dda23f' }] },
+  options: { indexAxis: 'y' }
+});
+</script>
+{% endblock %}

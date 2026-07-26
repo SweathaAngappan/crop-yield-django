@@ -1,0 +1,15 @@
+body { font-family: Arial, sans-serif; background: #12160f; color: #eef0e4; margin: 0; padding: 0; }
+.wrap { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+.tabs { display: flex; gap: 2px; margin-bottom: 24px; border-bottom: 1px solid #333d26; }
+.tab { padding: 10px 18px; text-decoration: none; color: #6f765f; font-size: 13px; letter-spacing: 0.05em; text-transform: uppercase; border-bottom: 2px solid transparent; }
+.tab.active { color: #dda23f; border-bottom-color: #dda23f; }
+.card { background: #1d2317; border: 1px solid #333d26; border-radius: 8px; padding: 24px; margin-bottom: 16px; }
+h1 { font-size: 26px; margin-top: 0; }
+label { display: block; margin-top: 14px; margin-bottom: 6px; font-size: 13px; color: #a7ae98; }
+select, input { width: 100%; padding: 8px; background: #171b12; border: 1px solid #333d26; color: #eef0e4; border-radius: 4px; box-sizing: border-box; }
+button { margin-top: 20px; width: 100%; padding: 10px; background: #dda23f; color: #1a1608; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; }
+.result { margin-top: 20px; padding: 14px; background: #242c1b; border-radius: 6px; font-size: 18px; color: #dda23f; }
+.stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.stat { background: #1d2317; border: 1px solid #333d26; border-radius: 8px; padding: 16px; }
+.stat .label { font-size: 11px; text-transform: uppercase; color: #6f765f; }
+.stat .value { font-size: 24px; font-weight: bold; color: #eef0e4; margin-top: 6px; }
